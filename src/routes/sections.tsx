@@ -9,6 +9,7 @@ import DashboardLayout from '../components/layout/dashboardLayout';
 // ----------------------------------------------------------------------
 
 export const HomePage = lazy(() => import('../pages/home'));
+export const LoginPage = lazy(() => import('../pages/login'));
 // export const BlogPage = lazy(() => import('src/pages/blog'));
 // export const UserPage = lazy(() => import('src/pages/user'));
 // export const SignInPage = lazy(() => import('src/pages/sign-in'));
@@ -67,7 +68,7 @@ export function PrivateRouter() {
 
 export function PublicRouter() {
   return useRoutes([
-    { element: <HomePage />, index: true },
+    { element: <LoginPage />, index: true },
     // { element: <AuthLayout><SignInPage /></AuthLayout>, index: true },
     // { path: 'user', element: <AuthLayout><SignInPage /></AuthLayout> },
 
