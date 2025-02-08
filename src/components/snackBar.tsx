@@ -6,7 +6,6 @@ import { useNotification } from '../context/NotificationContext';
 
 const SnackBarComponent: React.FC = () => {
   const { notifications, removeNotification } = useNotification();
-
   return (
     <div style={{ position: 'fixed', top: '10px', right: '10px', zIndex: 1300 }}>
       {notifications.map(({ id, message, type }: Notification) => (
