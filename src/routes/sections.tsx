@@ -17,7 +17,7 @@ export const LoginPage = lazy(() => import('../pages/login'));
 // export const AdminPage = lazy(() => import('src/pages/admin/admin'));
 
 // // ---------- Costumer Components
-// export const CustomersPage = lazy(() => import('src/pages/customers/customersIndex'));
+export const ClientPage = lazy(() => import('../pages/client/clientsIndex'));
 // export const CustomersCreatePage = lazy(() => import('src/pages/customers/createCustomer'));
 // export const CustomersDetailsPage = lazy(() => import('src/pages/customers/customersDetails'));
 // export const CustomersEditPage = lazy(() => import('src/pages/customers/editCustomer'));
@@ -47,7 +47,7 @@ export function PrivateRouter() {
       ),
       children: [
         { element: <HomePage />, index: true },
-        // { path: 'user', element: <UserPage /> },
+        { path: 'clients', element: <ClientPage /> },
         // { path: 'blog', element: <BlogPage /> },
         // { path: 'sales', element: <SalesPage /> },
         // { path: 'expenses', element: <ExpensesPage /> },
@@ -72,7 +72,7 @@ export function PublicRouter() {
     // { element: <AuthLayout><SignInPage /></AuthLayout>, index: true },
     // { path: 'user', element: <AuthLayout><SignInPage /></AuthLayout> },
 
-    // { path: 'products', element: <AuthLayout><SignInPage /></AuthLayout> },
+    { path: 'clients', element: <LoginPage /> },
     // { path: 'products/create', element: <AuthLayout><SignInPage /></AuthLayout> },
     // { path: 'products/details/:id', element: <AuthLayout><SignInPage /></AuthLayout> },
     // { path: 'products/edit/:id', element: <AuthLayout><SignInPage /></AuthLayout> },
