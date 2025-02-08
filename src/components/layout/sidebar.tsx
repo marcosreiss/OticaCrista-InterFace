@@ -6,13 +6,14 @@ import { navData, NavItem } from './navData';
 
 const drawerWidth = 230;
 
-// Estilização customizada do Drawer com gradiente e sombra
+// Estilização do Drawer para se adaptar ao tema
 const StyledDrawer = styled(Drawer)(({ theme }) => ({
   '& .MuiDrawer-paper': {
     width: drawerWidth,
-    background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
-    borderRight: 'none',
-    color: theme.palette.text.primary,
+    backgroundColor: theme.palette.background.default, // Usa cor de fundo do tema
+    color: theme.palette.text.primary, // Usa cor do texto do tema
+    borderRight: '1px solid',
+    borderColor: theme.palette.divider, // Usa a cor do divider do tema
     paddingTop: theme.spacing(2),
     boxShadow: '2px 0px 8px rgba(0, 0, 0, 0.1)',
   },
@@ -32,12 +33,14 @@ const Sidebar: React.FC = () => {
             sx={{
               margin: theme.spacing(1, 2),
               borderRadius: 1,
+              bgcolor: theme.palette.background.paper, // Usa a cor de papel do tema
+              color: theme.palette.text.primary,
               '&:hover': {
-                backgroundColor: 'rgba(0, 0, 0, 0.08)',
+                backgroundColor: theme.palette.action.hover, // Usa cor de hover do tema
               },
             }}
           >
-            <ListItemIcon>
+            <ListItemIcon sx={{ color: theme.palette.primary.main }}>
               {item.icon}
             </ListItemIcon>
             <ListItemText primary={item.title} />

@@ -9,6 +9,7 @@ import * as useScrollToTop from './hooks/use-scroll-to-top';
 
 import { useAuth } from "./context/AuthContext";
 import { PublicRouter, PrivateRouter } from './routes/sections';
+import CustomThemeProvider from './theme/themeProvider';
 
 // ----------------------------------------------------------------------
 
@@ -17,8 +18,12 @@ export default function App() {
   const { isAuthenticated } = useAuth();
 
   return isAuthenticated() ? (
-    <PrivateRouter />
+    <CustomThemeProvider>
+      <PrivateRouter />
+    </CustomThemeProvider>
   ) : (
-    <PublicRouter />
+    <CustomThemeProvider>
+      <PublicRouter />
+    </CustomThemeProvider>
   )
 }
